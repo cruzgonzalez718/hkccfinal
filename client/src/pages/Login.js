@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Axios from 'axios';
-
+import { useNavigate } from 'react-router-dom';
 
 function RegisterForm() { 
     const [inputs, setInputs] = useState({ name: '', email: '', password: '' });
@@ -70,8 +70,10 @@ function RegisterForm() {
 };
 
 function LoginForm() { 
-    const [inputs, setInputs] = useState({ email: '', password: '' });
+    const navigate = useNavigate();
 
+    const [inputs, setInputs] = useState({ email: '', password: '' });
+    
     const handleChange = (event) => {
         const { name, value } = event.target;
         setInputs({ ...inputs, [name]: value });
@@ -86,6 +88,7 @@ function LoginForm() {
         .then(response => {
         if(response.status === 200) {
             alert("Valid User!"); 
+            navigate('/projects');                                   //Redirect to projects page
         }
         console.log(response.message); 
         })

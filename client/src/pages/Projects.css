@@ -1,0 +1,109 @@
+.projects-container {
+  padding: 40px;
+  background-color: #f0f4f8;
+  border-radius: 8px;
+  max-width: 1200px;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.projects-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.projects-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row; /* Aligns items in a row */
+  gap: 20px; /* Adds space between the items */
+  flex-wrap: wrap; /* Ensures items wrap to the next line if they overflow */
+}
+
+.project-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 300px; /* Flex-grow: 1, Flex-shrink: 1, Base width: 300px */
+  box-sizing: border-box; /* Ensures padding and border are included in the width */
+  text-align: center;
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.project-item h3 {
+  margin-top: 10px;
+  color: #333;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.project-item p {
+  color: #666;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.add-project-form {
+  margin-top: 30px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.add-project-form input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  flex: 1;
+  font-size: 1em;
+  max-width: 300px;
+}
+
+.add-project-form button {
+  padding: 12px 24px;
+  border: none;
+  background-color: #007BFF;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.add-project-form button:hover {
+  background-color: #0056b3;
+}
+.project-button {
+  padding: 12px 24px;
+  border: none;
+  background-color: #007BFF;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.project-button:hover {
+  background-color: #0056b3;
+}
