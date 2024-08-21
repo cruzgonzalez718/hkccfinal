@@ -2,7 +2,7 @@
   "name": "hopekcc",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://class3.hopekcc.org/classroom/team-os/final/build/",
+  "homepage": "http://class4.hopekcc.org/classroom/team-os/build/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

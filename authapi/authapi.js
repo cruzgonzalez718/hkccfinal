@@ -6,9 +6,9 @@ const bodyParser = require('body-parser');
 
 const db = mysql.createPool({
     host: "localhost",
-    user: "austin", //change to root on local
+    user: "teamos",
     password: "password",
-    database: "testdb"
+    database: "teamos"
 });
 
 app.use(express.json());
@@ -19,33 +19,7 @@ app.get('/', (req, res) => {
 
 });
 
-app.get('//', (req, res) => {
-  res.json({ message: 'Hello from the // route!' });
-});
-
-app.get('//login', (req, res) => {
-  res.json({ message: 'Hello from the Node.js server on //login route!' });
-});
-
-
-app.get('//register', (req, res) => {
-  res.json({ message: 'Hello from the //register route!' });
-});
-
-
-/*
-app.post('//login', (req, res) => {
-  return res.status(200).send({message: "YAY"});
-});
-
-app.post('//', (req, res) => {
-	return res.status(200).send({message: "aaa"});
-});
-*/
-
-
-
-app.post("//register", (req, res) => {
+app.post("/register", (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
     const password = req.body.password;
@@ -68,7 +42,7 @@ app.post("//register", (req, res) => {
 }); 
 
 
-app.post("//login", (req, res) => {
+app.post("/login", (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
 
