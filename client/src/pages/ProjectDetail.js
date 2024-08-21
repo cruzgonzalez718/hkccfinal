@@ -12,6 +12,11 @@ const ProjectDetail = () => {
         <button className="project-button">View Project</button>
         <h2>           </h2>
         <button className="project-button">Upload Files</button>
+        <h2>           </h2>
+        <button className="project-button">Start</button>
+        <h2>           </h2>
+        <button className="project-button">Stop</button>
+        
       </div>
     </div>
   );
