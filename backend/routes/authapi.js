@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getEmail, putLoginCredentials, getLoginCredentials } = require('../database/authDB');
+const { getEmail, getUsername, putLoginCredentials, getLoginCredentials } = require('../database/authDB');
 
 router.post("/register", async (req, res) => {
     const name = req.body.name;
