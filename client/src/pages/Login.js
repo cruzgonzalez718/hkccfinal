@@ -13,7 +13,7 @@ function RegisterForm() {
     };
     const handleSubmit = (event) => {
         event.preventDefault();
-        Axios.post(`/classroom/team-os/authapi/register`, { 
+        Axios.post(`/classroom/team-os/hkccfinal/backend/auth/register`, { 
         name: inputs.name,
         email: inputs.email,
         password: inputs.password
@@ -82,7 +82,7 @@ function LoginForm() {
     
     const handleSubmit = (event) => {
         event.preventDefault();
-        Axios.post(`/classroom/team-os/authapi/login`, {
+        Axios.post(`/classroom/team-os/hkccfinal/backend/auth/login`, {
         email: inputs.email,
         password: inputs.password
         })

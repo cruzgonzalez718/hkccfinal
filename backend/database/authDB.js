@@ -2,9 +2,9 @@ const mysql = require('mysql2');
 
 const db = mysql.createPool({
     host: "localhost",
-    user: "austin", //change to root on local
+    user: "teamos", //change to root on local
     password: "password",
-    database: "testdb"
+    database: "teamos"
 });
 
 
@@ -38,5 +38,5 @@ async function getLoginCredentials(email, password) {
         return result;
     })
 }
-
-export { getEmail, putLoginCredentials, getLoginCredentials };
+module.exports = { getEmail, putLoginCredentials, getLoginCredentials };
+//export { getEmail, putLoginCredentials, getLoginCredentials };

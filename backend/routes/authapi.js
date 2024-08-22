@@ -1,24 +1,6 @@
 const router = require('express').Router();
 const { getEmail, putLoginCredentials, getLoginCredentials } = require('../database/authDB');
 
-// router.get('/', (req, res) => {
-//   res.json({message: ' Hello from the / route ' });
-
-// });
-
-// router.get('//', (req, res) => {
-//   res.json({ message: 'Hello from the // route!' });
-// });
-
-// router.get('//login', (req, res) => {
-//   res.json({ message: 'Hello from the Node.js server on //login route!' });
-// });
-
-
-// router.get('//register', (req, res) => {
-//   res.json({ message: 'Hello from the //register route!' });
-// });
-
 router.post("/register", async (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
