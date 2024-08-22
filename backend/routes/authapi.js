@@ -3,6 +3,8 @@ const { getEmail, putLoginCredentials, getLoginCredentials } = require('../datab
 
 router.post("/register", async (req, res) => {
     const name = req.body.name;
+    const username = req.body.username;
+
     const email = req.body.email;
     const password = req.body.password;
  
@@ -15,7 +17,15 @@ router.post("/register", async (req, res) => {
             return res.status(400).send({ message: "Registration Unsuccessful" });
         }
 
-        const insertResult = await putLoginCredentials(name, email, password);
+        const result2 = await getUsername(username);
+        console.log("getUsername result:", result2);
+
+        if (result2.length !== 0) {
+            return res.status(400).send({ message: "Registration Unsuccessful" });
+        }
+
+
+        const insertResult = await putLoginCredentials(name, username, email, password);
         console.log("putLoginCredentials result:", insertResult);
 
         if (insertResult) {

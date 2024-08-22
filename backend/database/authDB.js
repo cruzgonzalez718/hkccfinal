@@ -23,10 +23,25 @@ async function getEmail(email) {
     });
 }
 
-async function putLoginCredentials(name, email, password) {
-    const sqlQuery2 = "INSERT INTO userinfo (name, email, password) VALUES (?,?,?)";
+async function getUsername(username) {
+    const sqlQuery1 = "SELECT * FROM userinfo WHERE username = ?";
+    
     return new Promise((resolve, reject) => {
-        db.query(sqlQuery2, [name, email, password], (err, result) => {
+        db.query(sqlQuery1, [username], (err, result) => {
+		console.log('Query results:', result);
+            if (err) {
+                return reject(new Error(`Database error in getEmail: ${err.message}`));
+            }
+            resolve(result);
+        });
+    });
+}
+
+
+async function putLoginCredentials(name, username, email, password) {
+    const sqlQuery2 = "INSERT INTO userinfo (name, username, email, password) VALUES (?,?,?,?)";
+    return new Promise((resolve, reject) => {
+        db.query(sqlQuery2, [name, username, email, password], (err, result) => {
             if (err) {
                 return reject(new Error(`Database error in putLoginCredentials: ${err.message}`));
             }
@@ -46,5 +61,5 @@ async function getLoginCredentials(email, password) {
         });
     });
 }
-module.exports = { getEmail, putLoginCredentials, getLoginCredentials };
+module.exports = { getEmail, getUsername, putLoginCredentials, getLoginCredentials };
 //export { getEmail, putLoginCredentials, getLoginCredentials };

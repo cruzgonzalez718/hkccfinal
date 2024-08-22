@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 function RegisterForm() { 
-    const [inputs, setInputs] = useState({ name: '', email: '', password: '' });
+    const [inputs, setInputs] = useState({ name: '', username: '', email: '', password: '' });
     const handleChange = (event) => {
         const { name, value } = event.target;
         setInputs({ ...inputs, [name]: value });
@@ -15,6 +15,7 @@ function RegisterForm() {
         event.preventDefault();
         Axios.post('/classroom/team-os/hkccfinal/backend/auth/register', { 
         name: inputs.name,
+        username: inputs.username,
         email: inputs.email,
         password: inputs.password
         })
@@ -40,6 +41,16 @@ function RegisterForm() {
                 type="text"
                 name="name"
                 value={inputs.name}
+                onChange={handleChange}
+            />
+            </label>
+            <br />
+            <label>
+            Username:
+            <input
+                type="text"
+                name="username"
+                value={inputs.username}
                 onChange={handleChange}
             />
             </label>
