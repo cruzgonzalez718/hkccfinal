@@ -24,20 +24,14 @@ const Hero = () => {
         <div className='hero-container'>
             <div className='hero-content'>
                 <p className='hero-subtitle'></p>
-                <h1 className='hero-title'>HopeKCC</h1>
+                <h1 className='md:text-8xl sm:text-7xl text-5xl font-bold md:py-3'>HopeKCC</h1>
                 <div className='hero-typed-container'>
                     <p className='hero-learn-text'>
                         Learn to code in
                     </p>
-                    <ReactTyped
-                        className='hero-typed'
-                        strings={['HTML', 'CSS', 'Java', 'Python']}
-                        typeSpeed={130}
-                        backSpeed={140}
-                        loop
-                    />
+                    <ReactTyped className='md:text-5xl sm:text-4xl text-2xl font-bold md:pl-4 pl-2' strings={['HTML', 'CSS', 'Java', 'Python']} typeSpeed={130} backSpeed={140} loop/>
                 </div>
-                <p className='hero-equation'>The Right Side of the Equation.</p>
+                <p className='md:text-3xl sm:text-2xl font-bold text-blue-400'>The Right Side of the Equation.</p>
                 <button className='hero-button' onClick={handleButtonClick}>
                 Login
                 </button>
