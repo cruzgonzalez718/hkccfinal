@@ -13,7 +13,7 @@ function RegisterForm() {
     };
     const handleSubmit = (event) => {
         event.preventDefault();
-        Axios.post(`/classroom/team-os/hkccfinal/backend/auth/register`, { 
+        Axios.post('/classroom/team-os/hkccfinal/backend/auth/register', { 
         name: inputs.name,
         email: inputs.email,
         password: inputs.password
@@ -82,8 +82,8 @@ function LoginForm() {
     
     const handleSubmit = (event) => {
         event.preventDefault();
-        Axios.post(`/classroom/team-os/hkccfinal/backend/auth/login`, {
-        email: inputs.email,
+        Axios.post('/classroom/team-os/hkccfinal/backend/auth/login', {
+	email: inputs.email,
         password: inputs.password
         })
         .then(response => {
@@ -135,7 +135,7 @@ const Login = () => {
     return (
         <div>
             {RegisterForm()}
-
+             
             {LoginForm()}
         </div>
 

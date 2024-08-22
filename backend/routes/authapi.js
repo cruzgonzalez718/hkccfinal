@@ -5,27 +5,29 @@ router.post("/register", async (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
     const password = req.body.password;
-    
-    await getEmail(name, email, password)
-      .then(async (result) => {
-        if (result.length == 0) {
-          return res.status(400).send({message: "Registration Unsuccessful"});
+ 
+
+    try {
+        const result = await getEmail(email);
+        console.log("getEmail result:", result);
+
+        if (result.length !== 0) {
+            return res.status(400).send({ message: "Registration Unsuccessful" });
         }
-        // put credentials into database
-        await putLoginCredentials(name, email, password)
-          .then((result) => {
-            if (result) {
-              res.status(200).send({message: "Registration Successful"});
-            }
-            res.status(500).send({err: "Registration Error", msg: "Error in inserting data"});
-          })
-          .catch((err) => {
-            res.status(500).send({err: "Registration Error", msg: err});
-          })
-      })
-      .catch((err) => {
-        return res.status(500).send({err: "Registration Error", msg: err});
-      });
+
+        const insertResult = await putLoginCredentials(name, email, password);
+        console.log("putLoginCredentials result:", insertResult);
+
+        if (insertResult) {
+            return res.status(200).send({ message: "Registration Successful" });
+        } else {
+            return res.status(500).send({ err: "Registration Error", msg: "Error in inserting data" });
+        }
+    } catch (err) {
+        console.error("Error during registration:", err);
+        return res.status(500).send({ err: "Registration Error", msg: err.message });
+    }
+
 }); 
 
 
@@ -33,16 +35,19 @@ router.post("/login", async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
 
-  await getLoginCredentials(email, password)
-    .then((result) => {
-      if (result) {
-        res.status(200).send({message: "Login Successful"});
-      }
-      res.status(401).send({message: "Invalid User"});
-    })
-    .catch((err) => {
-      res.status(500).send({err: "Login Error", msg: err});
-    });
+    try {
+        const result = await getLoginCredentials(email, password);
+        console.log("getLoginCredentials result:", result);
+
+        if (result.length > 0) {
+            return res.status(200).send({ message: "Login Successful" });
+        } else {
+            return res.status(401).send({ message: "Invalid User" });
+        }
+    } catch (err) {
+        console.error("Error during login:", err);
+        return res.status(500).send({ err: "Login Error", msg: err.message });
+    }
 }); 
 
 module.exports = router;
