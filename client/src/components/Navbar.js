@@ -33,7 +33,7 @@ const Navbar = () => {
             <li><Link to="/Login" onClick={handleNav}>Login</Link></li>
             <li><Link to="/About" onClick={handleNav}>About</Link></li>
             <li>
-              <a href="https://paypal.com" target="_blank" rel="noopener noreferrer" onClick={handleNav}>
+              <a href="https://www.paypal.com/donate/?hosted_button_id=YM8LC8PLAFXA4" target="_blank" rel="noopener noreferrer" onClick={handleNav}>
               Donate
               </a>
             </li>
