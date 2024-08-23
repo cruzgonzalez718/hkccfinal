@@ -1,0 +1,35 @@
+.about-content {
+    padding: 40px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .about-heading {
+    color: #3375ff;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    line-height: 1.0;
+  }
+  
+  .about-paragraph {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+  }
+  
+  @media (min-width: 768px) {
+    .about-content {
+      padding: 60px;
+    }
+  
+    .about-heading {
+      font-size: 1.75rem;
+    }
+  
+    .about-paragraph {
+      font-size: 2.0rem;
+    }
+  }
+  
