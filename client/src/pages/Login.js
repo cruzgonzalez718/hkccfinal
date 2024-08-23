@@ -32,53 +32,56 @@ function RegisterForm() {
     };
     
     return (
-        <div className="RegForm">
-        <h2>Register a new account:</h2>
-        <form onSubmit={handleSubmit}>
-            <label>
-            Name:
-            <input
-                type="text"
-                name="name"
-                value={inputs.name}
-                onChange={handleChange}
-            />
-            </label>
-            <br />
-            <label>
-            Username:
-            <input
-                type="text"
-                name="username"
-                value={inputs.username}
-                onChange={handleChange}
-            />
-            </label>
-            <br />
-            <label>
-            Email:
-            <input
-                type="email"
-                name="email"
-                value={inputs.email}
-                onChange={handleChange}
-            />
-            </label>
-            <br />
-            <label>
-            Password:
-            <input
-                type="password"
-                name="password"
-                value={inputs.password}
-                onChange={handleChange}
-            />
-            </label>
-            <br />
-            <button type="submit">Register!</button>
-        </form>
+        <div className="container">
+            <div className="RegForm">
+                <h2>Register a new account:</h2>
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        Name:
+                        <input
+                            type="text"
+                            name="name"
+                            value={inputs.name}
+                            onChange={handleChange}
+                        />
+                    </label>
+                    <br />
+                    <label>
+                        Username:
+                        <input
+                            type="text"
+                            name="username"
+                            value={inputs.username}
+                            onChange={handleChange}
+                        />
+                    </label>
+                    <br />
+                    <label>
+                        Email:
+                        <input
+                            type="email"
+                            name="email"
+                            value={inputs.email}
+                            onChange={handleChange}
+                        />
+                    </label>
+                    <br />
+                    <label>
+                        Password:
+                        <input
+                            type="password"
+                            name="password"
+                            value={inputs.password}
+                            onChange={handleChange}
+                        />
+                    </label>
+                    <br />
+                    <button type="submit">Register!</button>
+                </form>
+            </div>
         </div>
     );
+    
 };
 
 function LoginForm() { 
@@ -144,11 +147,17 @@ function LoginForm() {
 
 const Login = () => {
     return (
-        <div>
+        <div className ="container">
             {RegisterForm()}
              
             {LoginForm()}
         </div>
+
+
+    )
+};
+
+export default Login;
 
 
     )
